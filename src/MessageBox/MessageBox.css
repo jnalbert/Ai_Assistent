@@ -39,7 +39,7 @@
     width: fit-content;
     margin: 0 auto;
   }
-  .chat .messages .message {
+  /* .chat .messages .message {
     box-sizing: border-box;
     padding: 0.5rem 1rem;
     margin: 1rem;
@@ -57,7 +57,7 @@
     border-radius: 1.125rem 1.125rem 0 1.125rem;
     background: #1acf99f5;
     color: white;
-  }
+  } */
   .chat .messages .message .typing {
     display: inline-block;
     width: 0.8rem;
