@@ -12,28 +12,33 @@ function MessageBox(props) {
                     Mossimo
                 </div>
                 <div className="seen">
-                    Time/Date
+                    Today
                 </div>
             </div>
             <div className="messages" id="chat">
                 <div className="time">
-                    Today at 11:41
+                    {new Date().toLocaleString()}
                 </div>
-                <AssistantText message="test"/>
-                <UserText message="shting"/>
-                <AssistantText message="hello shting"/>
-                <UserText message="you are a shintg"/>
+                {
+                    props.messages.map((message) => {
+                        if (message.person === "AI") {
+                            return <AssistantText message={message.message}/>
+                        } else {
+                            return <UserText message={message.message}/>
+                        }
+                    })
+                }
                 <div className="message stark">
                     <div className="typing typing-1"></div>
                     <div className="typing typing-2"></div>
                     <div className="typing typing-3"></div>
                 </div>
             </div>
-            <div className="input">
-                <i className="fas fa-camera"></i><i className="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i className="fas fa-microphone"></i>
+            <div className="VoiceButton">
+                
             </div>
         </div>
     )
 }
 
-export default MessageBox; 
+export default MessageBox;

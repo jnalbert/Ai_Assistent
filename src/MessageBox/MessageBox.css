@@ -7,7 +7,7 @@
             flex-direction: column;
     -webkit-box-pack: justify;
             justify-content: space-between;
-    width: 24rem;
+    width: 28rem;
     height: 38rem;
     z-index: 2;
     box-sizing: border-box;
@@ -79,9 +79,9 @@
     -webkit-animation: typing 3s 500ms infinite;
             animation: typing 3s 500ms infinite;
   }
-  .chat .input {
+  .chat .VoiceButton {
     box-sizing: border-box;
-    flex-basis: 4rem;
+    flex-basis: 5rem;
     flex-shrink: 0;
     display: -webkit-box;
     display: flex;
@@ -89,7 +89,7 @@
             align-items: center;
     padding: 0 0.5rem 0 1.5rem;
   }
-  .chat .input i {
+  .chat .VoiceButton i {
     font-size: 1.5rem;
     margin-right: 1rem;
     color: #666;
@@ -97,7 +97,7 @@
     -webkit-transition: color 200ms;
     transition: color 200ms;
   }
-  .chat .input i:hover {
+  .chat .VoiceButton i:hover {
     color: #333;
   }
   .chat .input input {
@@ -113,9 +113,6 @@
     font-family: Red hat Display, sans-serif;
     font-weight: 400;
     letter-spacing: 0.025em;
-  }
-  .chat .input input:placeholder {
-    color: #999;
   }
 
   .pic.mossimo {
