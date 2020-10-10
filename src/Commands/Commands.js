@@ -18,7 +18,7 @@ function Commands() {
                 Steve Rogers
                 </div>
                 <div className="message">
-                That is America's ass 🇺🇸🍑
+                That is America's ass 
                 </div>
             </div>
             <div className="contact">

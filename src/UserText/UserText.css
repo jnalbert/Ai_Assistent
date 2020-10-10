@@ -1,0 +1,6 @@
+.chat .messages .message.user {
+    margin: 1rem 1rem 1rem auto;
+    border-radius: 1.125rem 1.125rem 0 1.125rem;
+    background: #1acf99f5;
+    color: white;
+}
