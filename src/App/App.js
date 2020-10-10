@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 
 function App() {
+
+  
+
   return (
     <div className="center">
     <div className="contacts">
@@ -69,12 +72,12 @@ function App() {
     </div>
     <div className="chat">
       <div className="contact bar">
-        <div className="pic mossiemo"></div>
+        <div className="pic mossimo"></div>
         <div className="name">
           Mossimo
         </div>
         <div className="seen">
-          Today at 12:56
+          Time/Date
         </div>
       </div>
       <div className="messages" id="chat">
