@@ -5,7 +5,7 @@ function MessageBox() {
     return (
         <div className="chat">
             <div className="contact bar">
-                <div className="pic mossiemo"></div>
+                <div className="pic mossimo"></div>
                 <div className="name">
                     Mossimo
                 </div>

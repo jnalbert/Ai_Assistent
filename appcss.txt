@@ -24,7 +24,7 @@ body, html {
   border-radius: 50%;
 }
 
-/* .contact {
+.contact {
   position: relative;
   margin-bottom: 1rem;
   padding-left: 5rem;
@@ -62,9 +62,9 @@ body, html {
   left: 2.5rem;
   background: #333;
   color: white;
-} */
+}
 
-/* .contacts {
+.contacts {
   position: absolute;
   top: 50%;
   left: 0;
@@ -102,7 +102,7 @@ body, html {
 .contacts:hover {
   -webkit-transform: translate(-23rem, -50%);
           transform: translate(-23rem, -50%);
-} */
+}
 
 /* .chat {
   position: relative;
