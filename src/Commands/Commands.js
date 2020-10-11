@@ -4,7 +4,7 @@ import './Commands.css';
 function Commands() {
     return (
         <div>
-            <div className="contacts">
+            <div className="contacts" id="commands">
             <i className="fas fa-bars fa-2x"></i>
             <h2>
                 Commands

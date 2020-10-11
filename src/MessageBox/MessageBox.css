@@ -85,20 +85,10 @@
     flex-shrink: 0;
     display: -webkit-box;
     display: flex;
+    justify-content: center;
     -webkit-box-align: center;
             align-items: center;
     padding: 0 0.5rem 0 1.5rem;
-  }
-  .chat .VoiceButton i {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: #666;
-    cursor: pointer;
-    -webkit-transition: color 200ms;
-    transition: color 200ms;
-  }
-  .chat .VoiceButton i:hover {
-    color: #333;
   }
   .chat .input input {
     border: none;
@@ -117,5 +107,28 @@
 
   .pic.mossimo {
     background-image: url("./Mossimo.jpg");
+  }
+  
+
+  .audioButton {
+    box-shadow: 0px 0px 0px 0px #27282A;
+    background-color:#1acf99f5;
+    border-radius:28px;
+    border:1px solid #1acf99f5;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:17px;
+    padding:16px 31px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #1acf99f5;
+  }
+  .audioButton:hover {
+    background-color:#2ed1a0d8;
+  }
+  .audioButton:active {
+    position:relative;
+    top:1px;
   }
   
