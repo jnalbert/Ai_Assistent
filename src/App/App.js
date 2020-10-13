@@ -15,6 +15,7 @@ function App() {
 
   useEffect(() => {
     setMessages([...messages, {person: "AI", message: "test"}])
+   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 
