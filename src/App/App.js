@@ -1,31 +1,78 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import MessageBox from '../MessageBox/MessageBox';
 import Commands from '../Commands/Commands';
-import {useState, useEffect} from 'react';
+import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
 
 function App() {
   const [messages, setMessages] = useState([
-  {person: "User", message: "please turn off the lights"},
-  {person:"AI", message:"You are a shting"},
-  {person: "User", message: "Sgt Shting responds"},
-  {person: "AI", message: "Louis is myu friemnd"},
-  {person: "AI", message: "you are ashitng who does not undersatnd map"}]);
+  {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today."}]);
 
-  useEffect(() => {
-    setMessages([...messages, {person: "AI", message: "test"}])
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // useEffect(() => {
+  //   setMessages([...messages, {person: "AI", message: "test"}])
+  //  // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
 
+  const commands = [
+    {
+      command: 'turn off (the) (lights) (light)',
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Ok. Turing off the lights"}])
+      }
+    },
+    {
+      command: 'turn the (lights) (light) off',
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Ok. Turing off the lights"}])
+      }
+    },
+    {
+      command: 'turn the (lights) (light) on',
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Ok. Turing on the lights"}])
+      }
+    },
+    {
+      command: 'turn on (the) (lights) (light)',
+      callback: (food) => {
+        setMessages([...messages, {person: "AI", message: "Ok. Turing on the lights"}])
+      }
+    },
+    {
+      command: 'Hello (Mossimo)',
+      callback: (food) => {
+        setMessages([...messages, {person: "AI", message: "Hi there!"}])
+      }
+    },
+    {
+      command: 'Turn on the (Green Egg) (Green Eggs)',
+      callback: (food) => {
+        setMessages([...messages, {person: "AI", message: "Ok. Turing on the Green Egg"}])
+      }
+    },
+  ];
 
+  const { transcript, resetTranscript } = useSpeechRecognition({ commands });
+
+  const startRecognition = () => {
+    SpeechRecognition.startListening();
+    console.log("listening");
+  };
+
+  const stopRecognition = () => {
+    SpeechRecognition.stopListening();
+    console.log("stoped listengin");
+    setMessages([...messages, {person: "User", message:transcript}])
+    resetTranscript();
+  }
 
   // setMessages(...messages, {person: "AI", message: "This is a test of setMessages"});
 
   return (
     <div className="center">
     <Commands/>
-    <MessageBox messages={messages}/>
+    <MessageBox stopRecog={stopRecognition} startRecog={startRecognition} messages={messages}/>
   </div>
   );
 }

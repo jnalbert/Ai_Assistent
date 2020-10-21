@@ -35,7 +35,7 @@ function MessageBox(props) {
                 </div>
             </div>
             <div className="VoiceButton">
-                <button className="audioButton">Click Me</button>
+                <button className="audioButton" onMouseDown={props.startRecog} onMouseUp={props.stopRecog} >Click Me</button>
             </div>
         </div>
     )
