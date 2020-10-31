@@ -47,8 +47,14 @@ function App() {
     },
     {
       command: 'Turn on the (Green Egg) (Green Eggs)',
-      callback: (food) => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turing on the Green Egg"}])
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Ok. Turning on the Green Egg"}])
+      }
+    },
+    {
+      command: 'get my kid into USC',
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Ok. I will set up a fake photo shoot and hide your assets"}])
       }
     },
   ];
