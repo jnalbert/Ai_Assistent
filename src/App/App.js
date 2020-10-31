@@ -9,10 +9,7 @@ function App() {
   const [messages, setMessages] = useState([
   {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today."}]);
 
-  // useEffect(() => {
-  //   setMessages([...messages, {person: "AI", message: "test"}])
-  //  // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
+  
 
   const commands = [
     {
