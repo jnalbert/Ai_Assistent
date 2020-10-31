@@ -4,12 +4,21 @@ import MessageBox from '../MessageBox/MessageBox';
 import Commands from '../Commands/Commands';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
+//sound stuff
+import useSound from 'use-sound';
+
+import helloAudio from '../Audio_clips/Hello.mp3'
+import lightsOffAudio from '../Audio_clips/LightsOff.mp3';
+import lightsOnAudio from '../Audio_clips/LightsOn.mp3';
 
 function App() {
   const [messages, setMessages] = useState([
   {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today."}]);
-
   
+
+  const [playHello] = useSound(helloAudio)
+  const [playLightsOff] = useSound(lightsOffAudio)
+  const [playLightsOn] = useSound(lightsOnAudio)
 
 
   const commands = [
@@ -17,30 +26,35 @@ function App() {
       command: 'turn off (the) (lights) (light)',
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
+        playLightsOff();
       }
     },
     {
       command: 'turn the (lights) (light) off',
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
+        playLightsOff();
       }
     },
     {
       command: 'turn the (lights) (light) on',
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
+        playLightsOn();
       }
     },
     {
       command: 'turn on (the) (lights) (light)',
-      callback: (food) => {
+      callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
+        playLightsOn();
       }
     },
     {
       command: 'Hello (Mossimo)',
-      callback: (food) => {
-        setMessages([...messages, {person: "AI", message: "Ciao senori! I am Mossimo your personal assistant."}])
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Ciao senori! My name is Mossimo your personal assistant."}])
+        playHello();
       }
     },
     {
@@ -73,10 +87,12 @@ function App() {
 
   // setMessages(...messages, {person: "AI", message: "This is a test of setMessages"});
 
+
+
   return (
-    <div className="center">
-    <Commands/>
-    <MessageBox stopRecog={stopRecognition} startRecog={startRecognition} messages={messages}/>
+  <div className="center">
+      <Commands/>
+      <MessageBox stopRecog={stopRecognition} startRecog={startRecognition} messages={messages}/>
   </div>
   );
 }
