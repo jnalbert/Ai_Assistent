@@ -11,35 +11,36 @@ function App() {
 
   
 
+
   const commands = [
     {
       command: 'turn off (the) (lights) (light)',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turing off the lights"}])
+        setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
       }
     },
     {
       command: 'turn the (lights) (light) off',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turing off the lights"}])
+        setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
       }
     },
     {
       command: 'turn the (lights) (light) on',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turing on the lights"}])
+        setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
       }
     },
     {
       command: 'turn on (the) (lights) (light)',
       callback: (food) => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turing on the lights"}])
+        setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
       }
     },
     {
       command: 'Hello (Mossimo)',
       callback: (food) => {
-        setMessages([...messages, {person: "AI", message: "Hi there!"}])
+        setMessages([...messages, {person: "AI", message: "Ciao senori! I am Mossimo your personal assistant."}])
       }
     },
     {
