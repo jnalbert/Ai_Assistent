@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import MessageBox from '../MessageBox/MessageBox';
 import Commands from '../Commands/Commands';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import Util from '../util/util.js';
 
 //sound stuff
 import useSound from 'use-sound';
@@ -20,6 +21,9 @@ function App() {
   const [playLightsOff] = useSound(lightsOffAudio)
   const [playLightsOn] = useSound(lightsOnAudio)
 
+  useEffect(() => {
+    Util.getLights();
+  }, [])
 
   const commands = [
     {
