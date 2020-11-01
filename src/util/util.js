@@ -1,7 +1,7 @@
 const axios =  require('axios');
-const {REACT_APP_FLIX_TOKEN} = process.env
+const {REACT_APP_LIFX_TOKEN} = process.env
 
-const LIFX_TOKEN = `Bearer ${REACT_APP_FLIX_TOKEN}`;
+const LIFX_TOKEN = `Bearer ${REACT_APP_LIFX_TOKEN}`;
 
 axios.defaults.headers['Authorization'] = LIFX_TOKEN;
 
