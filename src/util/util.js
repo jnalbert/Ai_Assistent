@@ -13,10 +13,14 @@ const Util = {
         console.log(response.data);
     },
 
-    async togglePower() {
+    togglePower() {
         axios.post(`${baseURL}/location:JustinBedroom/toggle`);
     }
 
+    // intruderAlert(){
+    //     axios.post(`${baseURL}/all/effect/Strobe`)
+    // }
+
 }
 
-export default  Util;
+export default Util;

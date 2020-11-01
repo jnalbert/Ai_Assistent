@@ -77,6 +77,13 @@ function App() {
         setMessages([...messages, {person: "AI", message: "Ok. I will set up a fake photo shoot and hide your assets"}])
       }
     },
+    {
+      command: "intruder alert",
+      callback: () => {
+        setMessages([...messages, {person: "AI", message: "Activating Strobe"}])
+        Util.intruderAlert();
+      }
+    }
   ];
 
   const { transcript, resetTranscript } = useSpeechRecognition({ commands });
