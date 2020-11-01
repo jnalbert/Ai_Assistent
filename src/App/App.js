@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import MessageBox from '../MessageBox/MessageBox';
 import Commands from '../Commands/Commands';
@@ -21,9 +21,9 @@ function App() {
   const [playLightsOff] = useSound(lightsOffAudio)
   const [playLightsOn] = useSound(lightsOnAudio)
 
-  useEffect(() => {
-    Util.getLights();
-  }, [])
+  // useEffect(() => {
+  //   Util.getLights();
+  // }, [])
 
   const commands = [
     {
@@ -31,6 +31,7 @@ function App() {
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
         playLightsOff();
+        Util.togglePower()
       }
     },
     {
@@ -38,6 +39,7 @@ function App() {
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
         playLightsOff();
+        Util.togglePower();
       }
     },
     {
@@ -45,6 +47,7 @@ function App() {
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
         playLightsOn();
+        Util.togglePower()
       }
     },
     {
@@ -52,6 +55,7 @@ function App() {
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
         playLightsOn();
+        Util.togglePower();
       }
     },
     {

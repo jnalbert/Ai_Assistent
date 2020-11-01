@@ -11,7 +11,12 @@ const Util = {
     async getLights() {
         const response = await axios.get(`${baseURL}/all`)
         console.log(response.data);
+    },
+
+    async togglePower() {
+        axios.post(`${baseURL}/location:JustinBedroom/toggle`);
     }
+
 }
 
 export default  Util;
