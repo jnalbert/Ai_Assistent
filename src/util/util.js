@@ -1,10 +1,7 @@
-import Config from 'config-js';
 const axios =  require('axios');
+const {REACT_APP_FLIX_TOKEN} = process.env
 
-
-const config = new Config('./config.js');
-
-const LIFX_TOKEN = `Bearer ${config.get('token')}`;
+const LIFX_TOKEN = `Bearer ${REACT_APP_FLIX_TOKEN}`;
 
 axios.defaults.headers['Authorization'] = LIFX_TOKEN;
 
