@@ -14,12 +14,19 @@ const Util = {
     },
 
     togglePower() {
-        axios.post(`${baseURL}/location:JustinBedroom/toggle`);
+        axios.post(`${baseURL}/location:Matthew_Room/toggle`);
+    },
+    
+    async intruderAlert(){
+        const response = await axios.post(`${baseURL}/location:Matthew_Room/effects/pulse`, {
+            color: "blue",
+            from_color: "red",
+            period: 0.2,
+            cycles: 30,
+            power_on: true
+        })
+        console.log(response.data.results);
     }
-
-    // intruderAlert(){
-    //     axios.post(`${baseURL}/all/effect/Strobe`)
-    // }
 
 }
 
