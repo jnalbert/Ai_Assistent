@@ -95,7 +95,7 @@ function App() {
 
   const stopRecognition = () => {
     SpeechRecognition.stopListening();
-    console.log("stoped listengin");
+    console.log("stopped listening");
     setMessages([...messages, {person: "User", message:transcript}])
     resetTranscript();
   }
