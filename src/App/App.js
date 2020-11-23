@@ -38,7 +38,9 @@ function App() {
     {
       command: 'turn off (the) (lights) (light)',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
+        const words = "Ok. Turning off the lights";
+        makeMessage("AI", words);
+
         playLightsOff();
         Util.togglePower()
       }
@@ -46,7 +48,9 @@ function App() {
     {
       command: 'turn the (lights) (light) off',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turning off the lights"}])
+        const words = "Ok. Turning off the lights";
+        makeMessage("AI", words);
+
         playLightsOff();
         Util.togglePower();
       }
@@ -54,7 +58,9 @@ function App() {
     {
       command: 'turn the (lights) (light) on',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
+        const words = "Ok. Turning on the lights";
+        makeMessage("AI", words);
+
         playLightsOn();
         Util.togglePower()
       }
@@ -62,7 +68,8 @@ function App() {
     {
       command: 'turn on (the) (lights) (light)',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turning on the lights"}])
+        const words = "Ok. Turning on the lights";
+        makeMessage("AI", words);
         playLightsOn();
         Util.togglePower();
       }
@@ -70,20 +77,24 @@ function App() {
     {
       command: 'Hello (Mossimo)',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ciao senori! My name is Mossimo your personal assistant."}])
+        const words = "Ciao senori! My name is Mossimo your personal assistant.";
+        makeMessage("AI", words);
+
         playHello();
       }
     },
     {
       command: 'Turn on the (Green Egg) (Green Eggs)',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. Turning on the Green Egg"}])
+        const words = "Ok. Turning on the Green Egg";
+        makeMessage("AI", words);
       }
     },
     {
       command: 'get my kid into USC',
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Ok. I will set up a fake photo shoot and hide your assets"}])
+        const words = "Ok. I will set up a fake photo shoot and hide your assets";
+        makeMessage("AI", words);
       }
     },
     {
@@ -91,16 +102,19 @@ function App() {
       callback: () => {
         const words = "Activating Strobe";
         makeMessage("AI", words);
+
         speaker.text = words;
         speechSynthesis.speak(speaker);
-        // Util.intruderAlert();
+        Util.intruderAlert();
       }
     },
     {
       command: "My name is *",
       callback: (name) => {
-        setMessages([...messages, {person: "AI", message: `Hello ${name} how are you doing today`}])
-        speaker.text = `Hello ${name} how are you doing today`;
+        const words = `Hello ${name} how are you doing today`;
+        makeMessage("AI", words);
+        
+        speaker.text = words;
         speechSynthesis.speak(speaker);
       }
     }
