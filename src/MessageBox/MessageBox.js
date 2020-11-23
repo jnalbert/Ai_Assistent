@@ -3,7 +3,7 @@ import './MessageBox.css'
 import AssistantText from '../AssistantText/AssistantText'
 import UserText from '../UserText/UserText';
 
-function MessageBox(props) {
+function MessageBox({messages, startRecog, stopRecog}) {
     return (
         <div className="chat">
             <div className="contact bar">
@@ -20,17 +20,17 @@ function MessageBox(props) {
                     {new Date().toLocaleString()}
                 </div>
                 {
-                    props.messages.map((message) => {
-                        if (message.person === "AI") {
-                            return <AssistantText message={message.message}/>
+                    messages.map(({person, message, key}) => {
+                        if (person === "AI") {
+                            return <AssistantText message={message} key={key}/>
                         } else {
-                            return <UserText message={message.message}/>
+                            return <UserText message={message} key={key}/>
                         }
                     })
                 }
             </div>
             <div className="VoiceButton">
-                <button className="audioButton" onMouseDown={props.startRecog} onMouseUp={props.stopRecog} >Hold to Speak</button>
+                <button className="audioButton" onMouseDown={startRecog} onMouseUp={stopRecog} >Hold to Speak</button>
             </div>
         </div>
     )
