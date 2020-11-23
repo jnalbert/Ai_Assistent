@@ -28,14 +28,9 @@ function MessageBox(props) {
                         }
                     })
                 }
-                <div className="message stark">
-                    <div className="typing typing-1"></div>
-                    <div className="typing typing-2"></div>
-                    <div className="typing typing-3"></div>
-                </div>
             </div>
             <div className="VoiceButton">
-                <button className="audioButton" onMouseDown={props.startRecog} onMouseUp={props.stopRecog} >Click Me</button>
+                <button className="audioButton" onMouseDown={props.startRecog} onMouseUp={props.stopRecog} >Hold to Speak</button>
             </div>
         </div>
     )
