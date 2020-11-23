@@ -12,6 +12,11 @@ import helloAudio from '../Audio_clips/Hello.mp3'
 import lightsOffAudio from '../Audio_clips/LightsOff.mp3';
 import lightsOnAudio from '../Audio_clips/LightsOn.mp3';
 
+const speechSynthesis = window.speechSynthesis;
+const speaker = new SpeechSynthesisUtterance();
+speaker.lang = "en-US";
+
+
 function App() {
   const [messages, setMessages] = useState([
   {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today."}]);
@@ -82,6 +87,14 @@ function App() {
       callback: () => {
         setMessages([...messages, {person: "AI", message: "Activating Strobe"}])
         Util.intruderAlert();
+      }
+    },
+    {
+      command: "My name is *",
+      callback: (name) => {
+        setMessages([...messages, {person: "AI", message: `Hello ${name} how are you doing today`}])
+        speaker.text = `Hello ${name} how are you doing today`;
+        speechSynthesis.speak(speaker);
       }
     }
   ];
