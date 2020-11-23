@@ -18,8 +18,11 @@ speaker.lang = "en-US";
 
 
 function App() {
+
+  const [key, setKey] = useState(1);
   const [messages, setMessages] = useState([
-  {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today."}]);
+  {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today.", key: 0}]);
+  
   
 
   const [playHello] = useSound(helloAudio)
@@ -29,6 +32,7 @@ function App() {
   // useEffect(() => {
   //   Util.getLights();
   // }, [])
+
 
   const commands = [
     {
@@ -85,8 +89,11 @@ function App() {
     {
       command: "intruder alert",
       callback: () => {
-        setMessages([...messages, {person: "AI", message: "Activating Strobe"}])
-        Util.intruderAlert();
+        const words = "Activating Strobe";
+        makeMessage("AI", words);
+        speaker.text = words;
+        speechSynthesis.speak(speaker);
+        // Util.intruderAlert();
       }
     },
     {
@@ -109,9 +116,17 @@ function App() {
   const stopRecognition = () => {
     SpeechRecognition.stopListening();
     console.log("stopped listening");
-    setMessages([...messages, {person: "User", message:transcript}])
+    makeMessage("User", transcript);
+    // setMessages([...messages, {person: "User", message:transcript}])
     resetTranscript();
   }
+
+  // makes a message with the arguments give
+  const makeMessage = (user, message) => {
+    setMessages([...messages, {person: user, message: message, key: key}])
+    setKey(key + 1);
+  }
+ 
 
   // setMessages(...messages, {person: "AI", message: "This is a test of setMessages"});
 
