@@ -109,11 +109,11 @@ function App() {
       }
     },
     {
-      command: "My name is *",
+      command: "test *",
       callback: (name) => {
         const words = `Hello ${name} how are you doing today`;
         makeMessage("AI", words);
-        
+
         speaker.text = words;
         speechSynthesis.speak(speaker);
       }
