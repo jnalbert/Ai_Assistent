@@ -21,7 +21,7 @@ function App() {
 
   const [key, setKey] = useState(1);
   const [messages, setMessages] = useState([
-  {person:"AI", message:"Hello my name is Mossimo your virtual assistant. How may I help you today.", key: 0}]);
+  {person:"AI", message:"Hello my name is JARVIS your virtual assistant. How may I help you today.", key: 0}]);
   
   
 
