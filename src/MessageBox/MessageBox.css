@@ -42,25 +42,7 @@
     width: fit-content;
     margin: 0 auto;
   }
-  /* .chat .messages .message {
-    box-sizing: border-box;
-    padding: 0.5rem 1rem;
-    margin: 1rem;
-    background: #FFF;
-    border-radius: 1.125rem 1.125rem 1.125rem 0;
-    min-height: 2.25rem;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    max-width: 66%;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
-  }
-  .chat .messages .message.parker {
-    margin: 1rem 1rem 1rem auto;
-    border-radius: 1.125rem 1.125rem 0 1.125rem;
-    background: #1acf99f5;
-    color: white;
-  } */
+  
   .chat .messages .message .typing {
     display: inline-block;
     width: 0.8rem;
