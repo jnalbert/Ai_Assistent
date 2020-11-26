@@ -5,12 +5,17 @@ import Commands from '../Commands/Commands';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import Util from '../util/util.js';
 
-//sound stuff
-import useSound from 'use-sound';
+// OLD SOUND STUFF
+// //sound stuff
+// import useSound from 'use-sound';
 
-import helloAudio from '../Audio_clips/Hello.mp3'
-import lightsOffAudio from '../Audio_clips/LightsOff.mp3';
-import lightsOnAudio from '../Audio_clips/LightsOn.mp3';
+// import helloAudio from '../Audio_clips/Hello.mp3'
+// import lightsOffAudio from '../Audio_clips/LightsOff.mp3';
+// import lightsOnAudio from '../Audio_clips/LightsOn.mp3';
+  // const [playHello] = useSound(helloAudio)
+  // const [playLightsOff] = useSound(lightsOffAudio)
+  // const [playLightsOn] = useSound(lightsOnAudio)
+  // OLD SOUND STUFF
 
 const speechSynthesis = window.speechSynthesis;
 const speaker = new SpeechSynthesisUtterance();
@@ -25,9 +30,7 @@ function App() {
   
   
 
-  const [playHello] = useSound(helloAudio)
-  const [playLightsOff] = useSound(lightsOffAudio)
-  const [playLightsOn] = useSound(lightsOnAudio)
+
 
   // useEffect(() => {
   //   Util.getLights();
@@ -45,7 +48,7 @@ function App() {
         const words = "Ok. Turning off the lights";
         makeMessage("AI", words);
 
-        playLightsOff();
+        speakSomething(words);
         Util.togglePower()
       }
     },
@@ -55,7 +58,7 @@ function App() {
         const words = "Ok. Turning off the lights";
         makeMessage("AI", words);
 
-        playLightsOff();
+        speakSomething(words);
         Util.togglePower();
       }
     },
@@ -65,7 +68,7 @@ function App() {
         const words = "Ok. Turning on the lights";
         makeMessage("AI", words);
 
-        playLightsOn();
+        speakSomething(words);
         Util.togglePower()
       }
     },
@@ -74,7 +77,8 @@ function App() {
       callback: () => {
         const words = "Ok. Turning on the lights";
         makeMessage("AI", words);
-        playLightsOn();
+
+        speakSomething(words);
         Util.togglePower();
       }
     },
@@ -84,7 +88,7 @@ function App() {
         const words = "Ciao senori! My name is Mossimo your personal assistant.";
         makeMessage("AI", words);
 
-        playHello();
+        speakSomething(words);
       }
     },
     {
