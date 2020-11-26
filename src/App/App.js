@@ -84,7 +84,7 @@ function App() {
     {
       command: 'Hello (Mossimo)',
       callback: () => {
-        const words = "Ciao senori! My name is Mossimo your personal assistant.";
+        const words = "Hello! My name is JARVIS your personal assistant.";
         makeMessage("AI", words);
 
         speakSomething(words);

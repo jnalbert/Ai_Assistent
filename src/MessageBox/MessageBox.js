@@ -20,10 +20,7 @@ function MessageBox({messages, startRecog, stopRecog}) {
             <div className="contact bar">
                 <div className="pic mossimo"></div>
                 <div className="name">
-                    Mossimo
-                </div>
-                <div className="seen">
-                    Today
+                    JARVIS
                 </div>
             </div>
             <div className="messages" id="chat">
