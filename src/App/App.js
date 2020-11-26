@@ -33,6 +33,10 @@ function App() {
   //   Util.getLights();
   // }, [])
 
+  const speakSomething = (words) => {
+    speaker.text = words;
+    speechSynthesis.speak(speaker)
+  }
 
   const commands = [
     {
@@ -88,6 +92,8 @@ function App() {
       callback: () => {
         const words = "Ok. Turning on the Green Egg";
         makeMessage("AI", words);
+
+        speakSomething(words);
       }
     },
     {
@@ -95,6 +101,8 @@ function App() {
       callback: () => {
         const words = "Ok. I will set up a fake photo shoot and hide your assets";
         makeMessage("AI", words);
+
+        speakSomething(words)
       }
     },
     {
@@ -103,8 +111,7 @@ function App() {
         const words = "Activating Strobe";
         makeMessage("AI", words);
 
-        speaker.text = words;
-        speechSynthesis.speak(speaker);
+        speakSomething(words);
         Util.intruderAlert();
       }
     },
@@ -114,8 +121,7 @@ function App() {
         const words = `Hello ${name} how are you doing today`;
         makeMessage("AI", words);
 
-        speaker.text = words;
-        speechSynthesis.speak(speaker);
+        speakSomething(words);
       }
     }
   ];
