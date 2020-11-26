@@ -19,7 +19,9 @@ import Util from '../util/util.js';
 
 const speechSynthesis = window.speechSynthesis;
 const speaker = new SpeechSynthesisUtterance();
-speaker.lang = "en-US";
+// const voices = speechSynthesis.getVoices()
+speaker.lang = "en-GR";
+
 
 
 function App() {
@@ -28,9 +30,6 @@ function App() {
   const [messages, setMessages] = useState([
   {person:"AI", message:"Hello my name is JARVIS your virtual assistant. How may I help you today.", key: 0}]);
   
-  
-
-
 
   // useEffect(() => {
   //   Util.getLights();
