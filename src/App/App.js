@@ -20,7 +20,7 @@ import Util from '../util/util.js';
 const speechSynthesis = window.speechSynthesis;
 const speaker = new SpeechSynthesisUtterance();
 // const voices = speechSynthesis.getVoices()
-speaker.lang = "en-GR";
+speaker.lang = "en-US";
 
 
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import './AssistantText.css';
 
-function AssistantText (props) {
+function AssistantText ({message}) {
     return (
             <div className="message assistant">
-                {props.message}
+                {message}
             </div>
         )
 }
